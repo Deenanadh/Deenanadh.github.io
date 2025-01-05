@@ -1,37 +1,46 @@
-
+// About Section - See More Toggle
 function toggleMoreInfo() {
-    const moreInfo = document.getElementById("more-info");
-    const button = document.getElementById("see-more-btn");
-    const aboutContent = document.getElementById("about"); // the whole about section
-    const image = document.getElementsByClassName("aboutImg");
-
-    // Toggle the class 'show-more' on the 'about' section
-    aboutContent.classList.toggle("show-more");
-
-    // Check if the class 'show-more' is applied
-    if (aboutContent.classList.contains("show-more")) {
-        moreInfo.style.display = "block";
-        button.textContent = "See Less";
+    const moreInfo = document.getElementById('more-info');
+    const btn = document.getElementById('see-more-btn');
+    if (moreInfo.style.display === 'none' || moreInfo.style.display === '') {
+        moreInfo.style.display = 'block';
+        btn.textContent = 'See Less';
     } else {
-        moreInfo.style.display = "none";
-        button.textContent = "See More";
+        moreInfo.style.display = 'none';
+        btn.textContent = 'See More';
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const moreInfo = document.getElementById("more-info");
-    const button = document.getElementById("see-more-btn");
-    const aboutContent = document.getElementById("about");
-
-    // Set initial button text based on visibility
-    if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
-        button.textContent = "See More";
+// Project Section - See More Toggle
+function toggleProjectInfo(projectName) {
+    const moreInfo = document.getElementById('more-info-' + projectName);
+    const btn = document.getElementById('see-more-btn-' + projectName);
+    if (moreInfo.style.display === 'none' || moreInfo.style.display === '') {
+        moreInfo.style.display = 'block';
+        btn.textContent = 'See Less';
     } else {
-        button.textContent = "See Less";
+        moreInfo.style.display = 'none';
+        btn.textContent = 'See More';
+    }
+}
+
+// Project Carousel Functionality
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+
+    currentIndex += direction;
+
+    // Prevent out-of-bounds movement
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - 1;
+    } else if (currentIndex >= totalSlides) {
+        currentIndex = 0;
     }
 
-    // Remove 'show-more' class on page load (start with hidden content and default image size)
-    if (!aboutContent.classList.contains("show-more")) {
-        moreInfo.style.display = "none";
-    }
-});
+    const newTransformValue = -(currentIndex * 33.3333); // Move by 1/3rd for 3 images at once
+    track.style.transform = `translateX(${newTransformValue}%)`;
+}
