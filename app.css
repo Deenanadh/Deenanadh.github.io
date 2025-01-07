@@ -125,18 +125,28 @@ h2 {
 }
 
 #about .profile-img {
-    width: 150px; /* Set the size of the profile image */
-    height: 150px; /* Set the size of the profile image */
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
-    border: 3px solid #f3f0f0; /* Add a border with a professional color (green) */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
-    margin-right: 30px; 
+    width: 150px;
+    /* Set the size of the profile image */
+    height: 150px;
+    /* Set the size of the profile image */
+    border-radius: 50%;
+    /* Make the image circular */
+    object-fit: cover;
+    /* Ensure the image covers the container without distortion */
+    border: 3px solid #f3f0f0;
+    /* Add a border with a professional color (green) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions for hover effects */
+    margin-right: 30px;
 }
+
 #about .profile-img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow effect on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Enhance shadow effect on hover */
 }
 
 /* Media query for screen sizes below 540px */
@@ -161,6 +171,54 @@ h2 {
     }
 }
 
+/*Resume Button Styling*/
+.ResumeDownload {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    margin-left: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #0078d4; /* A professional blue shade */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.ResumeDownload i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.ResumeDownload:hover {
+    background-color: #005a9e; /* Darker blue on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.ResumeDownload:active {
+    background-color: #003f6d; /* Even darker blue on click */
+    transform: translateY(1px); /* Push-down effect */
+}
+
+.ResumeDownload:focus {
+    outline: 2px solid #005a9e; /* Accessible focus outline */
+    outline-offset: 2px;
+}
+
+.more-info {
+    display: none;
+    padding: 10px 0;
+}
+
+
+
+
 /*Project*/
 /* Projects Section Styles */
 #projects {
@@ -177,15 +235,16 @@ h2 {
     margin-bottom: 30px;
 }
 
-.project_Container
-{
+.project_Container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 /* Styling the individual project containers */
 .project {
+    width: 100%;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -193,13 +252,13 @@ h2 {
     margin: 20px;
     transition: transform 0.3s ease;
     text-align: left;
-    max-width: 350px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .project:hover {
-    transform: translateY(-10px); /* Slight lift on hover for interactivity */
+    transform: translateY(-10px);
+    /* Slight lift on hover for interactivity */
 }
 
 .project h3 {
@@ -217,7 +276,9 @@ h2 {
 
 .project img {
     width: 100%;
+    height: 200px;
     height: auto;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -245,7 +306,7 @@ h2 {
     }
 
     .project {
-        max-width: 300px;
+        max-width: 100%;
         margin: 20px;
     }
 }
@@ -277,59 +338,69 @@ h2 {
 }
 
 
-/* Project Carousel */
 .carousel {
     position: relative;
-    width: 100%;
     overflow: hidden;
+    margin: 20px 0;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .carousel-track {
+    align-items: center;
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
-.carousel-slide {
-    min-width: 33.3333%;
-    padding: 10px;
+.carousel-item {
+    flex: 0 0 calc(33.33% - 10px);
+    height: 100%;
+    /* 3 items visible */
+    margin: 0 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.carousel-slide img {
+.carousel-item img {
+    height: 100%;
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    display: block;
+    border-radius: 5px;
 }
 
-.carousel-slide img:hover {
-    transform: scale(1.05);
-}
-
-.carousel-btn {
+.carousel-button-prev,
+.carousel-button-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
     border: none;
+    color: #fff;
     padding: 10px;
     cursor: pointer;
     z-index: 10;
-    border-radius: 50%;
+    font-size: 18px;
 }
 
-.prev-btn {
-    left: 10px;
+.carousel-button-prev {
+    left: 5px;
 }
 
-.next-btn {
-    right: 10px;
+.carousel-button-next {
+    right: 5px;
 }
 
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.carousel-button-prev:disabled,
+.carousel-button-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
+
 
 /* Skills Section */
 #skills {

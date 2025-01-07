@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header id="header">
         <div class="container">
@@ -16,7 +18,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="Deenanadh Polavarapu - Web developer - Resume.pdf" download="DeenanadhPolavarapu_Resume">Resume</a></li>
+                    <li><a href="Deenanadh Polavarapu - Web developer - Resume.pdf"
+                            download="DeenanadhPolavarapu_Resume">Resume</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,69 +30,96 @@
         <div class="about-content container">
             <img src="MyPic.jpg" alt="ProfilePic" class="profile-img">
             <div class="text">
-                <p>Hi! I am <b>Deenanadh</b>, a passionate web developer with over 2 years of experience specializing in front-end development. My expertise lies in JavaScript, HTML, CSS, and the MERN stack. I am always striving to stay up-to-date with the latest trends and best practices in web development.</p>
-                <div class="more-info" id="more-info" style="display: none;">
-                    <p>In my projects, I focus on clean, maintainable code and user-centric design. I am currently seeking opportunities to work on innovative projects and collaborate with teams to deliver impactful web experiences.</p>
-                    <button class="ResumeDownload"><i class="fa fa-download"></i> Resume</button>
+                <p>Hi! I am <b>Deenanadh</b>. I am a passionate and results-driven web developer with over 2 years of
+                    experience specializing in front-end development and building user-centric web applications. With a
+                    strong foundation in JavaScript, HTML, CSS, and the MERN stack, I have worked on a variety of
+                    projects, from creating responsive websites to developing dynamic, data-driven applications. My goal
+                    is to combine my technical expertise with a deep understanding of user experience to craft
+                    intuitive, accessible, and high-performance web solutions.
+
+                </p>
+                <div class="more-info" id="about-more-info" style="display: none;">
+                    <p>In my projects, I focus on clean, maintainable code and always aim to stay up-to-date with the
+                        latest trends and best practices in web development. Whether it’s building a fully-fledged
+                        portfolio
+                        site, integrating third-party APIs, or solving complex problems, I am dedicated to delivering
+                        top-quality results.
+
+                        I am currently seeking opportunities where I can continue to grow, contribute to impactful
+                        projects,
+                        and collaborate with teams to create innovative web experiences.</p>
+                    <a href="Deenanadh Polavarapu - Web developer - Resume.pdf"><button class="ResumeDownload"><i
+                                class="fa fa-download"></i> Resume</button></a>
                 </div>
-                <button class="see-more-btn" id="see-more-btn-about" onclick="toggleMoreInfo()">See More</button>
+                <button class="see-more-btn" id="see-more-btn-about" onclick="toggleMoreInfo(this)">See More</button>
             </div>
         </div>
     </section>
 
     <section id="projects" class="section">
         <h2>My Projects</h2>
-    <div class="project_Container">
-        <div class="project">
-            <h3>CineTrack</h3>
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="cineTrack1.jpg" alt="CineTrack Image 1">
+        <div class="project_Container">
+            <div class="project">
+                <h3>CineTrack</h3>
+                <div class="carousel">
+                    <button class="carousel-button-prev" aria-label="Previous">&lt;</button>
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-item"><img src="MyPic.jpg" alt="Project 1 Image 1"></li>
+                            <li class="carousel-item"><img src="project1-image2.jpg" alt="Project 1 Image 2"></li>
+                            <li class="carousel-item"><img src="project1-image3.jpg" alt="Project 1 Image 3"></li>
+                            <li class="carousel-item"><img src="project1-image4.jpg" alt="Project 1 Image 4"></li>
+                        </ul>
                     </div>
-                    <div class="carousel-slide">
-                        <img src="cineTrack2.jpg" alt="CineTrack Image 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="cineTrack3.jpg" alt="CineTrack Image 3">
-                    </div>
+                    <button class="carousel-button-next" aria-label="Next">&gt;</button>
                 </div>
-                <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
-                <button class="carousel-btn next-btn" onclick="moveCarousel(1)">&#10095;</button>
-            </div>
-            <p>This web application allows users to explore a vast collection of TV shows and movies...</p>
-            <div class="more-info" id="more-info-cinetrack" style="display: none;">
-                <p>Features include search functionality, detailed information display, and trending section...</p>
-            </div>
-            <button class="see-more-btn" id="see-more-btn-cinetrack" onclick="toggleProjectInfo('cinetrack')">See More</button>
-        </div>
-    
-        <div class="project">
-            <h3>ExpenseTracker</h3>
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="expenseTracker1.jpg" alt="ExpenseTracker Image 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="expenseTracker2.jpg" alt="ExpenseTracker Image 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="expenseTracker3.jpg" alt="ExpenseTracker Image 3">
-                    </div>
+                <p>This web application allows users to explore a vast collection of TV shows and movies, providing
+                    detailed
+                    information such as summaries, ratings, release dates, and cast information. Users can search for
+                    their
+                    favorite titles, view trending content, and get recommendations based on their interests. The app
+                    pulls
+                    data from an external API to keep the information up-to-date, offering a seamless and interactive
+                    experience.</p>
+                <div class="more-info" id="more-info-cinetrack" style="display: none;">
+                    <p><br><b>Features</b>:<br>
+                        Search Functionality: Users can search for TV shows and movies by title, genre, or actor.<br>
+                        Detailed Information: Displays key details like plot summaries, ratings, release dates, and
+                        cast.<br>
+                        Trending Section: Shows currently popular TV shows and movies.<br>
+                        User Interface: Clean and responsive design optimized for both desktop and mobile devices.
+                    </p>
                 </div>
-                <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
-                <button class="carousel-btn next-btn" onclick="moveCarousel(1)">&#10095;</button>
+                <button class="see-more-btn" id="see-more-btn-cinetrack" onclick="toggleProjectInfo('cinetrack')">See
+                    More</button>
             </div>
-            <p>This web application is designed to help users manage and track their financial transactions...</p>
-            <div class="more-info" id="more-info-expensetracker" style="display: none;">
-                <p>Additional features include categorizing expenses, visual reports, and budget tracking...</p>
+
+            <div class="project">
+                <h3>ExpenseTracker</h3>
+                <div class="carousel">
+                    <button class="carousel-button-prev" aria-label="Previous">&lt;</button>
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-item"><img src="project2-image1.jpg" alt="Project 2 Image 1"></li>
+                            <li class="carousel-item"><img src="project2-image2.jpg" alt="Project 2 Image 2"></li>
+                        </ul>
+                    </div>
+                    <button class="carousel-button-next" aria-label="Next">&gt;</button>
+                </div>
+                <p>This web application is designed to help users manage and track their financial transactions with
+                    ease.
+                    By inputting details of each transaction, users can categorize their expenses and income into
+                    predefined
+                    or custom categories, giving them a clear overview of their financial habits and budgeting.</p>
+                <div class="more-info" id="more-info-expensetracker" style="display: none;">
+                    <p>Additional features include categorizing expenses, visual reports, and budget tracking...</p>
+                </div>
+                <button class="see-more-btn" id="see-more-btn-expensetracker"
+                    onclick="toggleProjectInfo('expensetracker')">See More</button>
             </div>
-            <button class="see-more-btn" id="see-more-btn-expensetracker" onclick="toggleProjectInfo('expensetracker')">See More</button>
         </div>
-    </div>
     </section>
-    
+
 
     <section id="contact" class="section">
         <h2>Contact Me</h2>
@@ -102,4 +132,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
