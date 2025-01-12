@@ -107,8 +107,8 @@ h2 {
 }
 
 /* About Section */
-#about {
-    background-color: aqua;
+#about ,#Experience{
+    background-color: rgba(60, 60, 60, 0.1);
     display: flex;
     flex-direction: column;
     /* Default layout: image and text side by side */
@@ -399,79 +399,6 @@ h2 {
 .carousel-button-next:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-
-
-/* Skills Section */
-#skills {
-    background-color: #f9f9f9;
-}
-
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.skill {
-    width: 48%;
-    margin-bottom: 20px;
-}
-
-.skill-bar {
-    height: 8px;
-    background-color: #ddd;
-    border-radius: 5px;
-    position: relative;
-}
-
-.skill-bar:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #4CAF50;
-    height: 100%;
-    border-radius: 5px;
-}
-
-.skill-bar[data-skill="HTML"]::before {
-    width: 90%;
-}
-
-.skill-bar[data-skill="CSS"]::before {
-    width: 85%;
-}
-
-.skill-bar[data-skill="JavaScript"]::before {
-    width: 80%;
-}
-
-.skill-bar[data-skill="React"]::before {
-    width: 75%;
-}
-
-/* Contact Section */
-#contact {
-    background-color: white;
-}
-
-.contact-btn {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.contact-btn:hover {
-    background-color: #45a049;
 }
 
 /* Footer */
