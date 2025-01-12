@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -216,7 +216,20 @@ h2 {
     padding: 10px 0;
 }
 
-
+.job
+{
+padding: 0 50px;
+}
+.job_details
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.job_details>h4{
+    align-self: flex-start;
+}
 
 
 /*Project*/
