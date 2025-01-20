@@ -63,3 +63,61 @@ document.addEventListener("DOMContentLoaded", () => {
         updateButtons();
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const jobCards = document.querySelectorAll('.job');
+  
+    // Create one popup container
+    const popup = document.createElement('div');
+    popup.classList.add('experience-popup');
+  
+    // Inner popup content
+    const popupContent = document.createElement('div');
+    popupContent.classList.add('experience-popup-content');
+    popup.appendChild(popupContent);
+  
+    // Insert into the document
+    document.body.appendChild(popup);
+  
+    // For each job card, click -> open popup
+    jobCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const jobDetailsDiv = card.querySelector('.job_details');
+        const jobRoleDiv    = card.querySelector('.job_role');
+  
+        // Build HTML to show both the short details + full role 
+        const jobDetailsHtml = jobDetailsDiv ? jobDetailsDiv.innerHTML : '';
+        const jobRoleHtml    = jobRoleDiv ? jobRoleDiv.innerHTML : '';
+  
+        popupContent.innerHTML = `
+          <button class="close-popup">&#10006;</button>
+          <div class="job_details">
+            ${ jobDetailsHtml }
+          </div>
+          <hr style="margin: 1rem 0;">
+          <div class="job_role active">
+            ${ jobRoleHtml }
+          </div>
+        `;
+  
+        // Show the popup
+        popup.classList.add('active');
+  
+        // Close button inside popup
+        const closeButton = popupContent.querySelector('.close-popup');
+        closeButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          popup.classList.remove('active');
+        });
+      });
+    });
+  
+    // Close if clicking outside the white popup box
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+      }
+    });
+  });
+  
+  
