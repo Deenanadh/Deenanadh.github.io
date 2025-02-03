@@ -140,7 +140,7 @@
   }
   
   .text {
-    max-width: 600px;
+    max-width: 900px;
     line-height: 1.7;
   }
   
@@ -234,7 +234,8 @@
   /* Each .job is a "card" now */
   #Experience > .job {
     flex: 1 1 300px;        /* Each card tries to be ~300px wide, then grows equally */
-    min-width: 300px;       /* So they don't shrink too small */
+    min-width: 300px; 
+    max-width: 20%;      /* So they don't shrink too small */
     display: flex;
     flex-direction: column; /* Title + content stacked vertically */
     justify-content: space-between;
